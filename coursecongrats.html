@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Python Introduction | Codezbin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    :root {
+      --font-base: 1rem;
+      --sidebar-width: 220px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      display: flex;
+      min-height: 100vh;
+      background-color: #f6f6f6;
+      font-size: var(--font-base);
+    }
+
+    .sidebar {
+      width: var(--sidebar-width);
+      background-color: #ffffff;
+      border-right: 1px solid #ccc;
+      padding: 1.5rem 1rem;
+      flex-shrink: 0;
+    }
+
+    .sidebar h2 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .sidebar a {
+      display: block;
+      padding: 0.6rem 0;
+      color: #000;
+      text-decoration: none;
+      font-size: 0.95rem;
+      border-bottom: 1px solid #eee;
+    }
+
+    .sidebar a:hover {
+      font-weight: bold;
+      color: #2b2bff;
+    }
+
+    .main-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: #ffffff;
+      border-bottom: 1px solid #ccc;
+      flex-wrap: wrap;
+    }
+
+    .navbar h1 {
+      font-size: 1.25rem;
+    }
+
+    .navbar .menu {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.9rem;
+      flex-wrap: wrap;
+    }
+
+    .navbar .menu a {
+      text-decoration: none;
+      color: #000;
+    }
+
+    .content {
+      padding: 2rem;
+    }
+
+    .content h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .content p,
+    .content ul {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .content ul {
+      margin-top: 0.8rem;
+      margin-left: 1.2rem;
+    }
+
+    .nav-buttons {
+      margin-top: 2rem;
+    }
+
+    .nav-buttons button {
+      padding: 0.6rem 1.2rem;
+      font-size: 0.9rem;
+      margin-right: 1rem;
+      border: none;
+      background-color: #ccc;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .popup {
+      position: fixed;
+      top: 20%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      padding: 1.5rem;
+      width: 90%;
+      max-width: 350px;
+      z-index: 999;
+      text-align: center;
+      font-size: 1rem;
+    }
+
+    .popup .close-btn {
+      position: absolute;
+      top: 0.7rem;
+      right: 1rem;
+      font-size: 1.25rem;
+      cursor: pointer;
+    }
+
+    .popup h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .popup p {
+      margin-bottom: 0.5rem;
+    }
+
+    .popup a {
+      font-size: 0.95rem;
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .popup a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive behavior */
+    @media (max-width: 768px) {
+      .sidebar {
+        display: none;
+      }
+
+      .navbar h1 {
+        font-size: 1rem;
+      }
+
+      .navbar .menu {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: flex-end;
+      }
+
+      .popup {
+        font-size: 0.95rem;
+        padding: 1rem;
+      }
+
+      .nav-buttons button {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .popup h3 {
+        font-size: 1rem;
+      }
+
+      .popup a {
+        font-size: 0.85rem;
+      }
+
+      .content {
+        padding: 1rem;
+      }
+
+      .content h2 {
+        font-size: 1.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>CODEZBIN</h2>
+    <a href="#">Python Tutorial</a>
+    <a href="#">Python HOME</a>
+    <a href="#">Python Intro</a>
+    <a href="#">Python Get Started</a>
+    <a href="#">Python Syntax</a>
+    <a href="#">Python Comments</a>
+    <a href="#">Python Variables</a>
+    <a href="#">Python Data Types</a>
+    <a href="#">Python Numbers</a>
+    <a href="#">Python Casting</a>
+    <a href="#">Python Strings</a>
+    <a href="#">Python Booleans</a>
+    <a href="#">Python Operators</a>
+    <a href="#">Python Lists</a>
+    <a href="#">Python Tuple</a>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <div class="navbar">
+      <h1>Python Introduction</h1>
+      <div class="menu">
+        <a href="#">Home</a>
+        <a href="#">Notifications</a>
+        <a href="#">beninus0321@gmail.com ▼</a>
+      </div>
+    </div>
+
+    <div class="content">
+      <h2>What is Python?</h2>
+      <p>Python is a programming language. It was created by Guido van Rossum and first released in 1991.</p>
+      <ul>
+        <li>Python can be used on a server to create web applications.</li>
+        <li>Python can be used alongside software to create workflows.</li>
+      </ul>
+
+      <div class="nav-buttons">
+        <button>Previous</button>
+        <button>Next</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Completion Popup -->
+  <div class="popup" id="popup">
+    <div class="close-btn" onclick="document.getElementById('popup').style.display='none'">×</div>
+    <h3>HURRY !!! congratulations 🎉</h3>
+    <p>You Have Successfully Completed</p>
+    <p>your :: Python Course</p>
+    <a href="#">Download Certificate here</a>
+  </div>
+
+</body>
+</html>

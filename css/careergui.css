@@ -1,0 +1,149 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #0b1f3a;
+    color: white;
+}
+
+header {
+    background-color: #0b1f3a;
+    padding: 10px 20px;
+    text-align: center;
+    border-bottom: 2px solid #00f2fe;
+}
+
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+.nav-left span,
+.nav-right span {
+    margin: 0 10px;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile-pic {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 2px solid #00f2fe;
+}
+
+h1 {
+    margin: 10px 0;
+    color: #00f2fe;
+}
+
+.search-box {
+    padding: 10px;
+    width: 60%;
+    max-width: 400px;
+    border-radius: 8px;
+    border: 1px solid #00f2fe;
+    background-color: #112233;
+    color: white;
+}
+
+.main-content {
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+    min-height: calc(100vh - 80px);
+}
+
+.filters {
+    width: 220px;
+    padding: 20px;
+    background-color: #112233;
+    border-radius: 10px;
+    color: white;
+    border: 1px solid #00f2fe;
+}
+
+.filters h3 {
+    margin-top: 0;
+    font-size: 18px;
+    color: #00f2fe;
+}
+
+.filters label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.filters select {
+    width: 100%;
+    padding: 8px;
+    background-color: #223344;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    margin-top: 5px;
+}
+
+.content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card {
+    background: linear-gradient(135deg, #112233, #1c2e4a);
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    border-left: 4px solid #00f2fe;
+}
+
+.card img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    background-color: white;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.card h2 {
+    margin: 0 0 10px;
+    color: #00f2fe;
+    font-size: 18px;
+}
+
+.card p {
+    margin: 4px 0;
+    color: #cccccc;
+}
+
+.card a {
+    color: #00f2fe;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 8px;
+    display: inline-block;
+}
+
+.card a:hover {
+    text-decoration: underline;
+}
+
+/* Highlight the CODEZBIN title */
+.brand {
+    font-weight: bold;
+    font-size: 22px;
+    color: #00f2fe;
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Codezbin Bookstore</title>
+  <link rel="stylesheet" href="css\bookupi.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+  <header class="top-bar">
+    <div class="logo">CODEZBIN</div>
+    <nav class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">Notifications <i class="fas fa-bell"></i></a>
+    </nav>
+    <div class="profile-info">
+      benin2401@gmail.com <i class="fas fa-user-circle"></i>
+    </div>
+  </header>
+
+  <div class="main-container">
+    <aside class="filters">
+      <h3>Filters</h3>
+      <label>By Author</label>
+      <select><option>All</option></select>
+      <label>Language</label>
+      <select><option>All</option></select>
+      <label>Price</label>
+      <select><option>All</option></select>
+      <label>Customer Reviews</label>
+      <select><option>All</option></select>
+      <label>Categories</label>
+      <select><option>All</option></select>
+    </aside>
+
+    <section class="bookstore">
+      <div class="search-bar">
+        <input type="text" placeholder="Search Books" />
+        <button><i class="fas fa-search"></i></button>
+      </div>
+
+      <div class="books-grid">
+        <div class="book-card">
+          <img src="https://images-na.ssl-images-amazon.com/images/I/51WIKlio9qL.jpg" alt="Python Book"/>
+          <div class="book-info">
+            <p><strong>By Ullman</strong></p>
+            <p>Pages: 1020</p>
+            <p>Price: ₹500</p>
+          </div>
+        </div>
+
+        <div class="book-card">
+          <img src="pyt.jpg" alt="Another Book"/>
+          <div class="book-info">
+            <p><strong>By Imran</strong></p>
+            <p>Pages: 1024</p>
+            <p>Price: ₹900</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <aside class="buy-card">
+      <h3>BUY NOW</h3>
+      <div class="pay-options">
+        <img src="https://img.icons8.com/color/48/visa.png"/>
+        <img src="https://img.icons8.com/color/48/mastercard.png"/>
+        <img src="https://img.icons8.com/color/48/google-pay-india.png"/>
+        <img src="https://img.icons8.com/color/48/upi.png"/>
+      </div>
+      <div class="divider">OR</div>
+      <form>
+        <input type="email" placeholder="Email" required />
+        <input type="text" placeholder="Credit Card Number" required />
+        <input type="password" placeholder="Pin" required />
+        <button type="submit">Continue</button>
+      </form>
+    </aside>
+  </div>
+</body>
+</html>

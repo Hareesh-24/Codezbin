@@ -1,0 +1,175 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background-color: #0a1a2f;
+  color: #ffffff;
+}
+
+header {
+  background-color: #0f2a44;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar a,
+.email {
+  color: #ffffff;
+  margin-left: 2rem;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+main {
+  display: flex;
+  height: calc(100vh - 70px);
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #142d4c;
+  padding: 1rem;
+  border-radius: 10px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.sidebar h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #50c8ff;
+}
+
+.accordion > li {
+  list-style: none;
+  margin-bottom: 0.5rem;
+}
+
+.accordion input {
+  display: none;
+}
+
+.accordion label {
+  cursor: pointer;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.accordion ul ul {
+  margin-left: 1rem;
+}
+
+.accordion a {
+  text-decoration: none;
+  color: #bce0fd;
+  font-size: 0.95rem;
+  display: block;
+  padding: 0.2rem 0;
+}
+
+.accordion input:checked + label + ul {
+  display: block;
+}
+
+.accordion ul ul {
+  display: none;
+}
+
+.reader {
+  flex-grow: 1;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+.reader-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.book-page {
+  background-color: #0e223d;
+  padding: 1.5rem;
+  border-radius: 10px;
+  color: #d3e9ff;
+  border: 2px dashed #50c8ff;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.book-page h3 {
+  color: #50c8ff;
+  margin-bottom: 1rem;
+}
+
+.book-page p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.pagination {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-btn {
+  background-color: #50c8ff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.nav-btn:hover {
+  background-color: #3ab0e2;
+}
+.pdf-container {
+  flex-grow: 1;
+  height: 100%;
+  max-height: 85vh; /* Makes the PDF taller */
+  border: 2px dashed #50c8ff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+main {
+  display: flex;
+  height: calc(100vh - 60px); /* header height assumed ~60px */
+  overflow: hidden;
+}
+.sidebar {
+  width: 240px; /* or make it smaller if needed */
+  padding: 1rem;
+}
+.pdf-container iframe {
+  width: 100%;
+  height: 100%;
+}

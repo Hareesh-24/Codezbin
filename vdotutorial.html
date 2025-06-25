@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CODEZBIN - Python Tutorial</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background-color: #f0f0f0;
+            color: #000;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .nav-left h1 {
+            font-size: 24px;
+        }
+
+        .back-link {
+            margin: 5px 0 20px 0;
+            display: inline-block;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-right span {
+            margin-left: 20px;
+        }
+
+        .search-section {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .search-box {
+            display: flex;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .search-box input {
+            padding: 10px;
+            border: none;
+            outline: none;
+        }
+
+        .search-box button {
+            background-color: #eee;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+
+        .main-content {
+            display: flex;
+            gap: 20px;
+        }
+
+        .sidebar {
+            width: 220px;
+            border-right: 1px solid #ddd;
+            padding-right: 20px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar li {
+            padding: 8px 0;
+            cursor: pointer;
+        }
+
+        .sidebar li:hover {
+            color: #007bff;
+        }
+
+        .video-section {
+            flex: 1;
+            padding-left: 20px;
+        }
+
+        .video-section img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .thumbnail-row {
+            display: flex;
+            gap: 10px;
+        }
+
+        .thumbnail-row img {
+            width: 48%;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="nav-left">
+                <h1>CODEZBIN</h1>
+            </div>
+            <div class="nav-right">
+                <span>Home</span>
+                <span>Notifications</span>
+                <span>beniusso321@gmail.com</span>
+            </div>
+        </div>
+
+        <a href="#" class="back-link">&larr; Back</a>
+
+        <div class="search-section">
+            <div class="search-box">
+                <input type="text" placeholder="Search Videos">
+                <button>&#128269;</button>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="sidebar">
+                <ul>
+                    <li>Python Intro</li>
+                    <li>Python Get Started</li>
+                    <li>Python Syntax</li>
+                    <li>Python Comments</li>
+                    <li>Python Variables</li>
+                    <li>Python Data Types</li>
+                    <li>Python Numbers</li>
+                    <li>Python Casting</li>
+                    <li>Python Strings</li>
+                    <li>Python Booleans</li>
+                    <li>Python Operators</li>
+                    <li>Python Lists</li>
+                    <li>Python Tuple</li>
+                </ul>
+            </div>
+
+            <div class="video-section">
+                <img src="https://i.ytimg.com/vi/kqtD5dpn9C8/maxresdefault.jpg" alt="Main Python Video">
+                <div class="thumbnail-row">
+                    <img src="https://i.ytimg.com/vi/kqtD5dpn9C8/maxresdefault.jpg" alt="Python Thumbnail 1">
+                    <img src="https://i.ytimg.com/vi/kqtD5dpn9C8/maxresdefault.jpg" alt="Python Thumbnail 2">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Python Introduction | CODEZBIN</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    :root {
+      --sidebar-width: 220px;
+      --font-size: 1rem;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      display: flex;
+      min-height: 100vh;
+      font-size: var(--font-size);
+      background-color: #f9f9f9;
+    }
+
+    .sidebar {
+      width: var(--sidebar-width);
+      background-color: #fff;
+      padding: 1rem;
+      border-right: 1px solid #ccc;
+      flex-shrink: 0;
+    }
+
+    .sidebar h2 {
+      font-size: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .sidebar a {
+      display: block;
+      padding: 0.5rem 0;
+      text-decoration: none;
+      color: #000;
+      font-size: 0.95rem;
+    }
+
+    .sidebar a:hover {
+      color: #2b2bff;
+      font-weight: bold;
+    }
+
+    .main-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: #fff;
+      border-bottom: 1px solid #ccc;
+      flex-wrap: wrap;
+    }
+
+    .navbar h1 {
+      font-size: 1.25rem;
+    }
+
+    .navbar .menu {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.9rem;
+      flex-wrap: wrap;
+    }
+
+    .navbar .menu a {
+      text-decoration: none;
+      color: #000;
+    }
+
+    .content {
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .content h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .content p,
+    .content ul {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .content ul {
+      margin-left: 1.5rem;
+    }
+
+    .content img {
+      max-width: 250px;
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+
+    .nav-buttons {
+      margin-top: 1.5rem;
+    }
+
+    .nav-buttons button {
+      padding: 0.5rem 1.2rem;
+      margin-right: 1rem;
+      background-color: #ddd;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 0.95rem;
+    }
+
+    .nav-buttons button:hover {
+      background-color: #bbb;
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        display: none;
+      }
+
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+
+      .content {
+        padding: 1.5rem;
+      }
+
+      .content h2 {
+        font-size: 1.25rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .content {
+        padding: 1rem;
+      }
+
+      .navbar h1 {
+        font-size: 1rem;
+      }
+
+      .content p,
+      .content ul {
+        font-size: 0.95rem;
+      }
+
+      .nav-buttons button {
+        font-size: 0.85rem;
+        padding: 0.4rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>CODEZBIN</h2>
+    <a href="#">Python Tutorial</a>
+    <a href="#">Python HOME</a>
+    <a href="#">Python Intro</a>
+    <a href="#">Python Get Started</a>
+    <a href="#">Python Syntax</a>
+    <a href="#">Python Comments</a>
+    <a href="#">Python Variables</a>
+    <a href="#">Python Data Types</a>
+    <a href="#">Python Numbers</a>
+    <a href="#">Python Casting</a>
+    <a href="#">Python Strings</a>
+    <a href="#">Python Booleans</a>
+    <a href="#">Python Operators</a>
+    <a href="#">Python Lists</a>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <div class="navbar">
+      <h1>Python Introduction</h1>
+      <div class="menu">
+        <a href="#">Home</a>
+        <a href="#">Notifications</a>
+        <a href="#">beninus0321@gmail.com ▼</a>
+      </div>
+    </div>
+
+    <div class="content">
+      <h2>What is Python?</h2>
+      <p>
+        Python is a popular programming language. It was created by Guido van Rossum, and released in 1991.
+      </p>
+
+      <p><strong>It is used for:</strong></p>
+      <ul>
+        <li>web development (server-side),</li>
+        <li>software development,</li>
+        <li>mathematics,</li>
+        <li>system scripting.</li>
+      </ul>
+
+      <p><strong>What can Python do?</strong></p>
+      <ul>
+        <li>Python can be used on a server to create web applications.</li>
+        <li>Python can be used alongside software to create workflows.</li>
+      </ul>
+
+      <img src="https://upload.wikimedia.org/wikipedia/commons/9/97/Guido_van_Rossum_OSCON_2006.jpg" alt="Guido van Rossum">
+
+      <div class="nav-buttons">
+        <button>Previous</button>
+        <button>Next</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
