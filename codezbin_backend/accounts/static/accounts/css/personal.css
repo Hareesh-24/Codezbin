@@ -1,24 +1,25 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background-color: #0b1e3d;
-  color: white;
+  background-color: #0b1f3a;
+  color: #e4e9f1;
 }
 
 .top-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #0b1e3d;
+  background-color: #08152e;
   padding: 15px 30px;
   color: white;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  border-bottom: 1px solid #00f2fe;
 }
 
 .logo {
   font-size: 22px;
   font-weight: bold;
   letter-spacing: 1px;
+  color: #00f2fe;
 }
 
 .profile-bar {
@@ -26,11 +27,12 @@ body {
   align-items: center;
   gap: 10px;
   font-size: 15px;
+  color: #ffffff;
 }
 
 .profile-icon {
   font-size: 22px;
-  color: white;
+  color: #00f2fe;
 }
 
 .details-container {
@@ -40,12 +42,13 @@ body {
 }
 
 .details-box {
-  background-color: #132d4f;
+  background-color: #112649;
   border-radius: 12px;
   padding: 30px;
   max-width: 850px;
   width: 100%;
   box-shadow: 0 0 20px rgba(0,0,0,0.4);
+  border-left: 4px solid #00f2fe;
 }
 
 .details-header {
@@ -60,22 +63,23 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
-  color: #fff;
+  color: #00f2fe;
 }
 
 .edit-button {
   padding: 10px 18px;
-  background-color: #2a5f9e;
+  background-color: #00f2fe;
   border: none;
   border-radius: 6px;
-  color: white;
+  color: #0b1f3a;
   font-weight: bold;
   cursor: pointer;
   transition: 0.3s ease;
 }
 
 .edit-button:hover {
-  background-color: #3d78be;
+  background-color: #00c896;
+  color: #0b1f3a;
 }
 
 .details-grid {
@@ -85,11 +89,13 @@ body {
 }
 
 .detail-item {
-  background-color: #1a3c66;
+  background-color: #17335f;
   padding: 15px 20px;
   border-radius: 8px;
   font-size: 15px;
+  color: #e4e9f1;
   box-shadow: inset 0 0 5px rgba(0,0,0,0.3);
+  border-left: 3px solid #00f2fe;
 }
 
 .detail-item.wide {

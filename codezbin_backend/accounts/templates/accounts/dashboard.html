@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
 <head>
   <meta charset="UTF-8" />
   <title>Codezbin Dashboard</title>
@@ -170,18 +171,24 @@
   <div class="sidebar">
     <div>
       <div class="profile">
-        <img src="images/profile.png" alt="Profile" />
-        <div class="profile-name">Hareesh</div>
+        <img src="{% static 'accounts/images/profile.png' %}" alt="Profile" />
+        <div class="profile-name">
+          <p>{{ user.get_full_name|default:user.username|default:user.email }}</p>
+        </div>
       </div>
-      <a href="personal.html" class="nav-link">🧑<span class="nav-text">Personal Details</span></a>
-      <a href="personal.html" class="nav-link">🔒<span class="nav-text">Privacy</span></a>
-      <a href="termsandconditions.html" class="nav-link">📜<span class="nav-text">Terms & Conditions</span></a>
-      <a href="certificatenotyet.html" class="nav-link">📄<span class="nav-text">Certificates</span></a>
-      <a href="termsandconditions.html" class="nav-link">❓<span class="nav-text">Help Center</span></a>
+
+      <!-- Sidebar Navigation -->
+     <a href="{% url 'personal_details' %}" class="nav-link">🧑<span class="nav-text">Personal Details</span></a>
+      <a href="{% url 'privacy' %}" class="nav-link">🔒<span class="nav-text">Privacy</span></a>
+      <a href="{% url 'terms_conditions' %}" class="nav-link">📜<span class="nav-text">Terms & Conditions</span></a>
+      <a href="{% url 'certificates' %}" class="nav-link">📄<span class="nav-text">Certificates</span></a>
+      <a href="{% url 'help_center' %}" class="nav-link"><span class="nav-text">Help Center</span></a>
+
     </div>
+
     <div class="sidebar-bottom">
-      <a href="login.html" class="nav-link">⎋<span class="nav-text">Log out</span></a>
-      <a href="personal.html" class="nav-link">⚙<span class="nav-text">Settings</span></a>
+      <a href="{% url 'logout' %}" class="nav-link">⎋<span class="nav-text">Log out</span></a>
+      <a href="{% url 'settings' %}" class="nav-link">⚙<span class="nav-text">Settings</span></a>
     </div>
   </div>
 
@@ -190,12 +197,12 @@
     <p>Let's start your coding journey today</p>
 
     <div class="grid-container">
-      <a href="coursedashboard.html" class="grid-item">Courses</a>
-      <a href="careergui.html" class="grid-item">Career Guide</a>
-      <a href="mentor.html" class="grid-item">Mentorship</a>
-      <a href="vdotype.html" class="grid-item">Video Tutorial</a>
-      <a href="books.html" class="grid-item">Books</a>
-      <a href="textedi.html" class="grid-item">Text Editor</a>
+      <a href="{% url 'courses' %}" class="grid-item">Courses</a>
+      <a href="{% url 'career' %}" class="grid-item">Career Guide</a>
+      <a href="{% url 'mentorship' %}" class="grid-item">Mentorship</a>
+      <a href="{% url 'videos' %}" class="grid-item">Video Tutorial</a>
+      <a href="{% url 'books' %}" class="grid-item">Books</a>
+      <a href="{% url 'editor' %}" class="grid-item">Text Editor</a>
     </div>
   </div>
 </body>

@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
 <head>
   <meta charset="UTF-8">
-  <title>CodezBin Login - Midnight Neon</title>
+  <title>CodezBin Sign Up - Midnight Neon</title>
   <style>
     * {
       box-sizing: border-box;
@@ -11,7 +12,7 @@
 
     body {
       margin: 0;
-      background-color: #0b1f3a; /* Updated background */
+      background-color: #0b1f3a; /* Unified background */
       color: #ffffff;
     }
 
@@ -21,7 +22,7 @@
       font-size: 32px;
       letter-spacing: 2px;
       padding: 30px 0 10px;
-      color: #00f2fe; /* Accent color matching buttons */
+      color: #00f2fe; /* Accent color */
     }
 
     .container {
@@ -43,11 +44,11 @@
 
     .left img {
         width: 500px;
-       max-width: 100%;
-      border-radius: 0; /* Set to 0 or keep 10px if you want slight rounding */
-      opacity: 0.9; /* Slight transparency for blending */
-      filter: drop-shadow(0 0 20px rgba(0, 242, 254, 0.3)); /* Neon glow */
-      background-color: transparent;
+  max-width: 100%;
+  border-radius: 0; /* Set to 0 or keep 10px if you want slight rounding */
+  opacity: 0.9; /* Slight transparency for blending */
+  filter: drop-shadow(0 0 20px rgba(0, 242, 254, 0.3)); /* Neon glow */
+  background-color: transparent;
     }
 
     .login-box {
@@ -66,7 +67,8 @@
     }
 
     .login-box input[type="text"],
-    .login-box input[type="password"] {
+    .login-box input[type="password"],
+    .login-box input[type="email"] {
       width: 100%;
       padding: 12px;
       margin: 10px 0;
@@ -79,19 +81,6 @@
 
     .login-box input::placeholder {
       color: #cccccc;
-    }
-
-    .login-box label {
-      font-size: 14px;
-    }
-
-    .options {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 13px;
-      margin: 10px 0;
-      color: #aaa;
     }
 
     .login-box button {
@@ -150,25 +139,6 @@
       color: #aaa;
     }
 
-    .signup-btn {
-      margin-top: 15px;
-      width: 100%;
-      padding: 12px;
-      background-color: transparent;
-      border: 2px solid #00f2fe;
-      border-radius: 8px;
-      color: #00f2fe;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background 0.3s, color 0.3s, box-shadow 0.3s;
-    }
-
-    .signup-btn:hover {
-      background-color: #00f2fe;
-      color: #0b1f3a;
-      box-shadow: 0 0 15px rgba(0, 242, 254, 0.6);
-    }
-
     a {
       color: #00f2fe;
       text-decoration: none;
@@ -180,28 +150,46 @@
   </style>
 </head>
 <body>
-  <h1>Welcome to CODEZBIN</h1>
+  <h1>Join CODEZBIN</h1>
   <div class="container">
     <div class="left">
-      <img src="images/head5.svg" alt="Codezbin Illustration">
+      <img src="{% static 'accounts/images/head5.svg' %}" alt="Codezbin Illustration">
     </div>
     <div class="right">
       <div class="login-box">
-        <h2>LOGIN</h2>
-        <input type="text" placeholder="User Name / Email ID">
-        <input type="password" placeholder="Password">
-        <div class="options">
-          <label><input type="checkbox"> Remind me</label>
-          <a href="reset.html">Forgot Password</a>
-        </div>
-        <button onclick="window.location.href='dashboard.html'">LOGIN</button>
+        <h2>SIGN UP</h2>
+        {% if error %}
+  <p style="color: red; text-align: center;">{{ error }}</p>
+{% endif %}
+{% if form.errors %}
+  <ul style="color: red; text-align: center;">
+    {% for field in form %}
+      {% for error in field.errors %}
+        <li>{{ field.label }}: {{ error }}</li>
+      {% endfor %}
+    {% endfor %}
+    {% for error in form.non_field_errors %}
+      <li>{{ error }}</li>
+    {% endfor %}
+  </ul>
+{% endif %}
+
+<form method="POST" action="">
+  {% csrf_token %}
+  <input type="text" name="username" placeholder="Full Name" required>
+  <input type="email" name="email" placeholder="Email ID" required>
+  <input type="password" name="password1" placeholder="Password" required>
+  <input type="password" name="password2" placeholder="Confirm Password" required>
+  <button type="submit">Sign Up</button>
+</form>
         <div class="or">OR</div>
         <button class="google-btn">
-          <img src="images/Google.svg" alt="Google Logo" />
-          Continue with Google
+          <img src="{% static 'accounts/images/google.svg' %}" alt="Google Logo" />
+          Sign up with Google
         </button>
-        <button class="signup-btn" onclick="window.location.href='signup.html'">Sign Up</button>
-
+        <div class="footer">
+          Already have an account? <a href="{% url 'login' %}">Login</a>
+        </div>
       </div>
     </div>
   </div>

@@ -1,8 +1,9 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>CodezBin Sign Up - Midnight Neon</title>
+  <title>CodezBin Login - Midnight Neon</title>
   <style>
     * {
       box-sizing: border-box;
@@ -11,7 +12,7 @@
 
     body {
       margin: 0;
-      background-color: #0b1f3a; /* Unified background */
+      background-color: #0b1f3a; /* Updated background */
       color: #ffffff;
     }
 
@@ -21,7 +22,7 @@
       font-size: 32px;
       letter-spacing: 2px;
       padding: 30px 0 10px;
-      color: #00f2fe; /* Accent color */
+      color: #00f2fe; /* Accent color matching buttons */
     }
 
     .container {
@@ -43,11 +44,11 @@
 
     .left img {
         width: 500px;
-  max-width: 100%;
-  border-radius: 0; /* Set to 0 or keep 10px if you want slight rounding */
-  opacity: 0.9; /* Slight transparency for blending */
-  filter: drop-shadow(0 0 20px rgba(0, 242, 254, 0.3)); /* Neon glow */
-  background-color: transparent;
+       max-width: 100%;
+      border-radius: 0; /* Set to 0 or keep 10px if you want slight rounding */
+      opacity: 0.9; /* Slight transparency for blending */
+      filter: drop-shadow(0 0 20px rgba(0, 242, 254, 0.3)); /* Neon glow */
+      background-color: transparent;
     }
 
     .login-box {
@@ -66,8 +67,7 @@
     }
 
     .login-box input[type="text"],
-    .login-box input[type="password"],
-    .login-box input[type="email"] {
+    .login-box input[type="password"] {
       width: 100%;
       padding: 12px;
       margin: 10px 0;
@@ -80,6 +80,19 @@
 
     .login-box input::placeholder {
       color: #cccccc;
+    }
+
+    .login-box label {
+      font-size: 14px;
+    }
+
+    .options {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      margin: 10px 0;
+      color: #aaa;
     }
 
     .login-box button {
@@ -138,6 +151,25 @@
       color: #aaa;
     }
 
+    .signup-btn {
+      margin-top: 15px;
+      width: 100%;
+      padding: 12px;
+      background-color: transparent;
+      border: 2px solid #00f2fe;
+      border-radius: 8px;
+      color: #00f2fe;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+    }
+
+    .signup-btn:hover {
+      background-color: #00f2fe;
+      color: #0b1f3a;
+      box-shadow: 0 0 15px rgba(0, 242, 254, 0.6);
+    }
+
     a {
       color: #00f2fe;
       text-decoration: none;
@@ -149,28 +181,31 @@
   </style>
 </head>
 <body>
-  <h1>Join CODEZBIN</h1>
+  <h1>Welcome to CODEZBIN</h1>
   <div class="container">
     <div class="left">
-      <img src="images/head5.svg" alt="Codezbin Illustration">
+      <img src="{% static 'accounts/images/head5.svg' %}" alt="Codezbin Illustration">
+
     </div>
     <div class="right">
       <div class="login-box">
-        <h2>SIGN UP</h2>
-        <input type="text" placeholder="Full Name">
-        <input type="email" placeholder="Email ID">
-        <input type="password" placeholder="Password">
-        <input type="password" placeholder="Confirm Password">
-        <button onclick="window.location.href='dashboard.html'">Sign Up</button>
-
+        <h2>LOGIN</h2>
+        <form method="POST" action="">
+  {% csrf_token %}
+  <input type="text" name="username" placeholder="User Name / Email ID">
+  <input type="password" name="password" placeholder="Password">
+  <div class="options">
+    <label><input type="checkbox"> Remind me</label>
+    <a href="reset.html">Forgot Password</a>
+  </div>
+  <button type="submit">LOGIN</button>
+</form>
         <div class="or">OR</div>
         <button class="google-btn">
-          <img src="images/Google.svg" alt="Google Logo" />
-          Sign up with Google
+          <img src="{% static 'accounts/images/google.svg' %}" alt="Codezbin Illustration">
+          Continue with Google
         </button>
-        <div class="footer">
-          Already have an account? <a href="signin.html">Login</a>
-        </div>
+       <button class="signup-btn" onclick="window.location.href='{% url 'signup' %}'">Sign Up</button>
       </div>
     </div>
   </div>

@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -38,7 +40,7 @@
     .page-title {
       flex: 1;
       text-align: center;
-      margin-right: 70px; /* Adjust to center despite logo on left */
+      margin-right: 70px;
     }
 
     .page-title h1 {
@@ -274,57 +276,75 @@
     </aside>
 
     <main class="courses-wrapper" id="courseList">
-      <!-- Course Cards -->
-      <div class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python">
-        <div class="info">
-          <p><strong>Python Bootcamp</strong></p>
-          <p>Dr. Mosh</p>
-          <p>1 month - Self Paced</p>
-          <button class="enroll-btn">Enroll</button>
-        </div>
-      </div>
 
+  {% if courses %}
+    {% for course in courses %}
       <div class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg" alt="C++">
+        <img src="{{ course.image_url }}" alt="{{ course.title }}">
         <div class="info">
-          <p><strong>C++ Mastery</strong></p>
-          <p>Dr. Jenny</p>
-          <p>2 months - Self Paced</p>
-          <button class="enroll-btn">Enroll</button>
+          <p><strong>{{ course.title }}</strong></p>
+          <p>{{ course.mentor }}</p>
+          <p>{{ course.duration }} - {{ course.mode }}</p>
+          <form method="POST" action="{% url 'enroll_course' course.id %}">
+            {% csrf_token %}
+            <button type="submit" class="enroll-btn">Enroll</button>
+          </form>
         </div>
       </div>
+    {% endfor %}
+  {% else %}
+    <!-- Fallback: Hardcoded courses if no dynamic ones -->
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python">
+      <div class="info">
+      <p><strong>Python Bootcamp</strong></p>
+      <p>Dr. Mosh</p>
+      <p>1 month - Self Paced</p>
+      <a href="{% url 'python_course' %}" class="enroll-btn">Enroll</a>
 
-      <div class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript">
-        <div class="info">
-          <p><strong>JavaScript Basics</strong></p>
-          <p>Dr. Robert</p>
-          <p>1 month - Self Paced</p>
-          <button class="enroll-btn">Enroll</button>
-        </div>
-      </div>
+      </a>
+    </div>
+    </div>
 
-      <div class="card">
-        <img src="https://cdn.worldvectorlogo.com/logos/java-4.svg" alt="Java">
-        <div class="info">
-          <p><strong>Java Essentials</strong></p>
-          <p>Dr. Ana</p>
-          <p>2 months - Live</p>
-          <button class="enroll-btn">Enroll</button>
-        </div>
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg" alt="C++">
+      <div class="info">
+        <p><strong>C++ Mastery</strong></p>
+        <p>Dr. Jenny</p>
+        <p>2 months - Self Paced</p>
+        <form method="POST" action="{% url 'enroll_course' 2 %}">{% csrf_token %}
+          <button type="submit" class="enroll-btn">Enroll</button>
+        </form>
       </div>
+    </div>
 
-      <div class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/React_Native_Logo.png" alt="React">
-        <div class="info">
-          <p><strong>React Native</strong></p>
-          <p>Dr. David</p>
-          <p>1 month - Self Paced</p>
-          <button class="enroll-btn">Enroll</button>
-        </div>
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JS">
+      <div class="info">
+        <p><strong>JavaScript Basics</strong></p>
+        <p>Dr. Robert</p>
+        <p>1 month - Self Paced</p>
+        <form method="POST" action="{% url 'enroll_course' 3 %}">{% csrf_token %}
+          <button type="submit" class="enroll-btn">Enroll</button>
+        </form>
       </div>
-    </main>
+    </div>
+
+    <div class="card">
+      <img src="https://cdn.worldvectorlogo.com/logos/java-4.svg" alt="Java">
+      <div class="info">
+        <p><strong>Java Essentials</strong></p>
+        <p>Dr. Ana</p>
+        <p>2 months - Live</p>
+        <form method="POST" action="{% url 'enroll_course' 4 %}">{% csrf_token %}
+          <button type="submit" class="enroll-btn">Enroll</button>
+        </form>
+      </div>
+    </div>
+  {% endif %}
+
+</main>
+
   </div>
 
   <script>

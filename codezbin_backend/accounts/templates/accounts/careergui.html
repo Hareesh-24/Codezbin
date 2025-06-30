@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Career Guidance - CODEZBIN</title>
-    <link rel="stylesheet" href="css\careergui.css">
+   <link rel="stylesheet" href="{% static 'accounts/css/careergui.css' %}">
 </head>
 <body>
     <header>
@@ -51,7 +52,7 @@
 
         <main class="content">
             <div class="card">
-                <img src="images/resumeicon.png" alt="Resume Icon">
+                <img src="{% static 'accounts/images/resumeicon.png' %}">
                 <div>
                     <h2>Topic: Resume Building</h2>
                     <p>Mentor: Alice Johnson</p>
@@ -62,7 +63,7 @@
             </div>
 
             <div class="card">
-                <img src="images/careericon.png" alt="Career Icon">
+                <img src="{% static 'accounts/images/careericon.png' %}">
                 <div>
                     <h2>Topic: Career Switch to Tech</h2>
                     <p>Mentor: David Smith</p>
@@ -72,7 +73,7 @@
                 </div>
             </div>
             <div class="card">
-              <img src="images/interviewicon.png" alt="Interview Icon">
+             <img src="{% static 'accounts/images/interviewicon.png' %}">
               <div>
                 <h2>Topic: Ace Tech Interviews</h2>
                 <p>Mentor: Sarah Lee</p>
